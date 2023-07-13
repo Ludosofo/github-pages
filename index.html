@@ -1,0 +1,35 @@
+<html><head><meta charset="utf-8">
+	<title>Github Pages demostracion</title>
+	<style type="text/css">
+		h1,h3{ text-align: center; color: #FFFFFF; }
+		img{ width: 50%; margin: 12px auto; display: block; }
+		body{
+			background-color: #000000;
+		}
+	</style>
+<style type="text/css" id="tts-styles">[data-tts-block-id].tts-active {background: rgba(206, 225, 255, 0.9) !important;} [data-tts-sentence-id].tts-active {background: rgba(0, 89, 191, 0.7) !important;}</style></head>
+<body>
+<h1>Tiempo para que termine el año</h1>
+<h1 id="countdown">17d 5h 0m 1s </h1>
+<script>
+var countDownDate = new Date("Jule 30, 2023 19:59:59").getTime();
+
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "¡Feliz año nuevo!";
+    }
+}, 100);
+
+</script>
+</body></html>
